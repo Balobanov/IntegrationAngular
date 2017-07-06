@@ -1,0 +1,17 @@
+.navBar {
+    height: 50px;
+    border: solid black 2px;
+    background-color: beige;
+    text-align: center;
+}
+
+.navBar ul li {
+    display: inline-block;
+    border: solid black 1px;
+    padding: 0 3px;
+}
+
+.navBar a:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
