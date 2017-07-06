@@ -1,17 +1,24 @@
 package org.balobanov.com.controllers;
 
+import org.balobanov.com.mocks.MockUtils;
+import org.balobanov.com.models.TestModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*")
 @RestController
 public class MainController {
 
+    @Autowired
+    MockUtils mockUtils;
+
     @ResponseBody
-    @RequestMapping(value = "/", produces = "application/json", method = RequestMethod.GET)
-    public ResponseEntity home() {
-        return ResponseEntity.ok().body("Dev");
+    @RequestMapping(value = "/test-model-array", produces = "application/json", method = RequestMethod.GET)
+    public List<TestModel> home() {
+        List<TestModel> testModelList = mockUtils.getTestModelList();
+        return testModelList;
     }
 }

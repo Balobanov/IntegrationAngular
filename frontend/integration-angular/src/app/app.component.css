@@ -1,0 +1,16 @@
+html, body {
+    background-color: azure;
+    height: 100%;
+}
+
+.app-content {
+    background-color: peachpuff;
+    width: 80%;
+    margin: auto;
+    height: 1000px;
+}
+
+.app-container{
+    min-height:100%;
+    min-width:100%;
+}
